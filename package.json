@@ -12,5 +12,8 @@
   "dependencies": {
     "astro": "^4.0.8",
     "bootstrap-icons": "^1.11.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.6"
   }
 }

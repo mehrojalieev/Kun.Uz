@@ -49,15 +49,17 @@ import Container from "../utils/Container.astro";
 </nav>
 
 
-<style>
+<style lang="scss">
     .nav__banner{
         width: 100%;
         height: 220px;
+        img{
+            width: 100%;
+            height: 100%;
+
+        }
     }
-    .nav__banner > img{
-        width: 100%;
-        height: 100%;
-    }
+ 
     .nav-wrapper{
         display: flex;
         align-items: center;
@@ -77,35 +79,37 @@ import Container from "../utils/Container.astro";
         color: black;
         font-weight: 700;
         font-size: 16px;
-
+        &:hover{
+            text-decoration: underline;
+        }
     }
-    .menu__item a:hover{
-        text-decoration: underline;
-    }
+ 
     .nav-action{
         display: flex;
         align-items: center;
         gap: 0px 15px;
+        select{
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 13px;
+        }
+        button{
+            border: none;
+            border-radius: 7px;
+            background-color: #e6e6e6;
+            width: 30px;
+            height: 32px;
+            font-size: 17px;
+        }
     }
-    .nav-action > select{
-        border-radius: 15px;
-        padding: 5px 10px;
-        font-size: 13px;
-    }
-    .nav-action button{
-        border: none;
-        border-radius: 7px;
-        background-color: #e6e6e6;
-        width: 30px;
-        height: 32px;
-        font-size: 17px;
-    }
+  
 
     /* Category styles */
     .nav__category-wrapper{
         width: 1290px;
         height: 45px;
         background-color: #f0f0f0;
+        margin-top: 20px;
     }
     .category__menu{
         display: flex;
