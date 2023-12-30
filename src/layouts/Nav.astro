@@ -5,11 +5,139 @@ import Container from "../utils/Container.astro";
 
 <nav class="nav">
     <Container>
+        <div class="nav__banner">
+            <img src="../../public/navBanner.png" alt="">
+        </div>
         <div class="nav-wrapper">
             <img src="../../public/logo.svg" alt="">
             <ul class="nav-menu">
-                
+                <li class="menu__item"><a href="">Ўзбекистон</a></li>
+                <li class="menu__item"><a href="">Жаҳон</a></li>
+                <li class="menu__item"><a href="">Иқтисодиёт</a></li>
+                <li class="menu__item"><a href="">Жамият</a></li>
+                <li class="menu__item"><a href="">Фан-техника</a></li>
+                <li class="menu__item"><a href="">Спорт</a></li>
+                <li class="menu__item"><a href="">Нуқтайи назар</a></li>
+                <li class="menu__item"><a href="">Аудио</a></li>
             </ul>
+            <div class="nav-action">
+                <select>
+                    <option value="uz">Ўзбекча</option>
+                </select>
+                <button><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+        <div class="nav__category-wrapper">
+                <ul class="category__menu">
+                    <li><a href="">Ҳудудлар</a></li>
+                    <li><a href="">Тошкент ш.</a></li>
+                    <li><a href="">Қорақалпоғистон</a></li>
+                    <li><a href="">Фарғона</a></li>
+                    <li><a href="">Наманган</a></li>
+                    <li><a href="">Самарқанд</a></li>
+                    <li><a href="">Бухоро</a></li>
+                    <li><a href="">Хоразм</a></li>
+                    <li><a href="">Сурхондарё</a></li>
+                    <li><a href="">Қашқадарё</a></li>
+                    <li><a href="">Жиззах</a></li>
+                    <li><a href="">Сирдарё</a></li>
+                    <li><a href="">Тошкент вил.</a></li>
+                    <li><a href="">Навоий</a></li>
+                </ul>
         </div>
     </Container>
 </nav>
+
+
+<style>
+    .nav__banner{
+        width: 100%;
+        height: 220px;
+    }
+    .nav__banner > img{
+        width: 100%;
+        height: 100%;
+    }
+    .nav-wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .nav-menu{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 0px 20px;
+        list-style-type: none;
+        margin-left: 50px;
+    }
+    .menu__item > a{
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 16px;
+
+    }
+    .menu__item a:hover{
+        text-decoration: underline;
+    }
+    .nav-action{
+        display: flex;
+        align-items: center;
+        gap: 0px 15px;
+    }
+    .nav-action > select{
+        border-radius: 15px;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .nav-action button{
+        border: none;
+        border-radius: 7px;
+        background-color: #e6e6e6;
+        width: 30px;
+        height: 32px;
+        font-size: 17px;
+    }
+
+    /* Category styles */
+    .nav__category-wrapper{
+        width: 1290px;
+        height: 45px;
+        background-color: #f0f0f0;
+    }
+    .category__menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        height: 100%;
+    }
+    .category__menu >li{
+        height: 100%;
+    }
+    .category__menu > li:hover{
+        background-color: blue;
+    }
+    .category__menu > li > a{
+        text-decoration: none;
+        color: #585858;
+        font-size: 12px;
+        border-right: 1px solid #000;
+        padding-right: 7px;
+        }
+    .category__menu > li a:hover{
+        background-color: blue;
+        color: #fff;
+    }
+    .category__menu > li:first-child > a:first-child{
+        background-color: blue !important;
+        padding-left: 4px;
+        height: 100%;
+        color: #fff;
+    }
+    .category__menu > li:last-child > a{
+        border: none ;
+    }
+</style>
