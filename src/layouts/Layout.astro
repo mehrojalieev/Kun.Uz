@@ -13,6 +13,7 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -21,9 +22,11 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Barlow:wght@600&family=Fredoka:wght@400;700&family=Gideon+Roman&family=Hind+Madurai:wght@400;700&family=IBM+Plex+Sans&family=Indie+Flower&family=Inter&family=Jomolhari&family=Khula&family=Montserrat:ital,wght@0,300;0,400;1,100&family=Nanum+Gothic:wght@400;700&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=Oswald:wght@200&family=Philosopher:wght@400;700&family=Poppins:wght@100;400&family=Raleway:wght@400;500&family=Roboto+Condensed&family=Roboto:wght@300;400&display=swap');@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Barlow:wght@600&family=Fredoka:wght@400;700&family=Gideon+Roman&family=Hind+Madurai:wght@400;700&family=IBM+Plex+Sans&family=Indie+Flower&family=Inter&family=Jomolhari&family=Khula&family=Montserrat:ital,wght@0,300;0,400;1,100&family=Nanum+Gothic:wght@400;700&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=Oswald:wght@200&family=Philosopher:wght@400;700&family=Poppins:wght@100;400&family=Raleway:wght@400;500&family=Roboto+Condensed&family=Roboto:wght@300;400&display=swap');
 		*{
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
+			font-family: 'Montserrat', sans-serif;
 		}
 </style>

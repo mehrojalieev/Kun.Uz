@@ -1,0 +1,264 @@
+---
+import Container from "../utils/Container.astro";
+import Aside from "../layouts/Aside.astro";
+---
+
+<Container>
+    <main class="main">
+        <div class="main-wrapper">
+            <div class="main__header">
+                <div class="main__header-image">
+                    <img src="../../public/mainHighImage.png" />
+                </div>
+                <div class="main__header-content">
+                    <input type="date" />
+                    <h2>
+                        Сурхондарё вилояти ҳокимининг собиқ ўринбосари 8,5 йилга
+                        қамалди
+                    </h2>
+                    <p>
+                        Рустам Пардаев муқаддам Сурхондарё вилояти ҳокимининг
+                        биринчи ўринбосари бўлган, шунингдек Денов ва Қизириқ
+                        туманларига ҳокимлик қилган.
+                    </p>
+                </div>
+            </div>
+            <div class="main__card-container">
+                <div class="main-card">
+                    <div class="card__image">
+                        <img src="../../public/card1.png" />
+                    </div>
+                    <div class="card__content">
+                        <input type="date" />
+                        <p>
+                            Биттадан ортиқ машинага эга оилаларга мол-мулк
+                            солиғини кўпроқ тўлаш тартибини жорий этиш таклиф
+                            қилинди
+                        </p>
+                    </div>
+                </div>
+                <div class="main-card">
+                    <div class="card__image">
+                        <img src="../../public/card2.png" />
+                    </div>
+                    <div class="card__content">
+                        <input type="date" />
+                        <p>
+                            Янги автомобилларни сотиш қоидаларига ўзгартириш
+                            киритилди
+                        </p>
+                    </div>
+                </div>
+                <div class="main-card">
+                    <div class="card__image">
+                        <img src="../../public/card3.png" />
+                    </div>
+                    <div class="card__content">
+                        <input type="date" />
+                        <p>
+                            Ифлос ҳавоси туфайли Тошкент саратон ва астма
+                            ўчоғига айланмоқда
+                        </p>
+                    </div>
+                </div>
+                <div class="main-card">
+                    <div class="card__image">
+                        <img src="../../public/card4.png" />
+                    </div>
+                    <div class="card__content">
+                        <input type="date" />
+                        <p>
+                            Танзила Норбоева: “Ўзбекистон ҳеч кимга мустамлака
+                            бўлмайди”
+                        </p>
+                    </div>
+                </div>
+            </div>
+           <div class="main-news">
+            <div class="main__news-title">
+                <h2>
+                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2.10999" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/></svg>
+                    Муҳаррир танлови
+                </h2>
+                <a href="#">Барчаси</a>
+            </div>
+            <div class="main__news-container">
+                <div class="news-card">
+                    <img src="../../public/news1.png" />
+                    <input type="date" />
+                    <p>
+                        Ифлос ҳавоси туфайли Тошкент саратон ва астма ўчоғига
+                        айланмоқда
+                    </p>
+                </div>
+                <div class="news-card">
+                    <img src="../../public/news2.png" />
+                    <input type="date" />
+                    <p>UzAuto Motors шартномани қачон очади?</p>
+                </div>
+                <div class="news-card">
+                    <img src="../../public/news3.png" />
+                    <input type="date" />
+                    <p>
+                        “Вақт-соати келган эди” — Тошкентдаги рейдларга узоқ
+                        тайёргарлик кўрилгани айтилди
+                    </p>
+                </div>
+            </div>y
+           </div>
+        </div>
+        <Aside />
+    </main>
+</Container>
+
+<style lang="scss">
+    main {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        height: 1000px;
+    }
+    .main-wrapper {
+        width: 1020px;
+        height: 100%;
+    }
+
+    .main__header {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        align-items: center;
+
+        .main__header-image {
+            width: 510px;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.2s;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.9;
+                }
+            }
+        }
+        .main__header-content {
+            padding: 25px 0 0 45px;
+            width: 510px;
+            height: 100%;
+            background-color: #eff2f8;
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+            h2 {
+                width: 450px;
+                font-size: 22px;
+                font-weight: 700;
+                color: #000;
+                margin-top: 10px;
+            }
+            p {
+                margin-top: 24px;
+                width: 450px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #000;
+                line-height: 26px;
+            }
+        }
+    }
+    .main__card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 30px 17px;
+        margin-top: 30px;
+    }
+    .main-card {
+        width: 500px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .card__image {
+            width: 175px;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 125px;
+                object-fit: cover;
+            }
+        }
+        .card__content {
+            height: 100%;
+            border-bottom: 1px solid rgba(143, 143, 143, 1);
+            input {
+                margin-top: 10px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+            p {
+                margin-top: 10px;
+                width: 293px;
+                color: #000;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 700;
+            }
+        }
+    }
+    .main-news{
+        margin-top: 30px;
+        width: 100%;
+        .main__news-title{
+            display: flex;
+            justify-content: space-between;
+            h2{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            a{
+                font-size: 17px;
+                font-weight: 600;
+                color: #17206a;
+               
+            }
+        }
+    }
+    .main__news-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 290px;
+        margin-top: 20px;
+    }
+    .news-card {
+        width: 325px;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 180px;
+        }
+        input {
+            margin-top: 10px;
+            outline: none;
+            border: none;
+            background: transparent;
+        }
+        p {
+            margin-top: 10px;
+            width: 280px;
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
+</style>
