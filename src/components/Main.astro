@@ -1,14 +1,24 @@
 ---
 import Container from "../utils/Container.astro";
 import Aside from "../layouts/Aside.astro";
+import {getCollection} from "astro:content"
+
+const mainCardNews = await getCollection("mainCardNews")
+const getMainData =  mainCardNews[0].data.MainCardNews;
+console.log(getMainData);
+
+
+
 ---
+
+
 
 <Container>
     <main class="main">
         <div class="main-wrapper">
             <div class="main__header">
                 <div class="main__header-image">
-                    <img src="../../public/mainHighImage.png" />
+                    <img src="./mainHighImage.png" />
                 </div>
                 <div class="main__header-content">
                     <input type="date" />
@@ -24,88 +34,53 @@ import Aside from "../layouts/Aside.astro";
                 </div>
             </div>
             <div class="main__card-container">
-                <div class="main-card">
-                    <div class="card__image">
-                        <img src="../../public/card1.png" />
-                    </div>
-                    <div class="card__content">
-                        <input type="date" />
-                        <p>
-                            Биттадан ортиқ машинага эга оилаларга мол-мулк
-                            солиғини кўпроқ тўлаш тартибини жорий этиш таклиф
-                            қилинди
-                        </p>
-                    </div>
+               {
+                getMainData.map(cardNew => 
+                    <div class="main-card">
+                            <div class="card__image">
+                                <img src={cardNew.image} alt="">
+                                </div>
+                            <div class="card__content">
+                                <span><i class="bi bi-calendar2-event-fill"></i>  &nbsp;{cardNew.date}</span>
+                                    <p>{cardNew.description}</p>
+                                </div>
+
+                        </div>
+                )
+               }
+            </div>
+            <div class="main-news">
+                <div class="main__news-title">
+                    <h2>
+                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg" ><rect     x="2"     y="2.10999"     width="11"     height="11"     rx="5.5"     stroke="#17206A"     stroke-width="4"></rect></svg >
+                         Муҳаррир танлови
+                    </h2>
+                    <a href="#">Барчаси</a>
                 </div>
-                <div class="main-card">
-                    <div class="card__image">
-                        <img src="../../public/card2.png" />
-                    </div>
-                    <div class="card__content">
-                        <input type="date" />
-                        <p>
-                            Янги автомобилларни сотиш қоидаларига ўзгартириш
-                            киритилди
-                        </p>
-                    </div>
-                </div>
-                <div class="main-card">
-                    <div class="card__image">
-                        <img src="../../public/card3.png" />
-                    </div>
-                    <div class="card__content">
+                <div class="main__news-container">
+                    <div class="news-card">
+                        <img src="./news1.png" />
                         <input type="date" />
                         <p>
                             Ифлос ҳавоси туфайли Тошкент саратон ва астма
                             ўчоғига айланмоқда
                         </p>
                     </div>
-                </div>
-                <div class="main-card">
-                    <div class="card__image">
-                        <img src="../../public/card4.png" />
+                    <div class="news-card">
+                        <img src="./news2.png" />
+                        <input type="date" />
+                        <p>UzAuto Motors шартномани қачон очади?</p>
                     </div>
-                    <div class="card__content">
+                    <div class="news-card">
+                        <img src="./news3.png" />
                         <input type="date" />
                         <p>
-                            Танзила Норбоева: “Ўзбекистон ҳеч кимга мустамлака
-                            бўлмайди”
+                            “Вақт-соати келган эди” — Тошкентдаги рейдларга узоқ
+                            тайёргарлик кўрилгани айтилди
                         </p>
                     </div>
-                </div>
+                </div>y
             </div>
-           <div class="main-news">
-            <div class="main__news-title">
-                <h2>
-                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2.10999" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/></svg>
-                    Муҳаррир танлови
-                </h2>
-                <a href="#">Барчаси</a>
-            </div>
-            <div class="main__news-container">
-                <div class="news-card">
-                    <img src="../../public/news1.png" />
-                    <input type="date" />
-                    <p>
-                        Ифлос ҳавоси туфайли Тошкент саратон ва астма ўчоғига
-                        айланмоқда
-                    </p>
-                </div>
-                <div class="news-card">
-                    <img src="../../public/news2.png" />
-                    <input type="date" />
-                    <p>UzAuto Motors шартномани қачон очади?</p>
-                </div>
-                <div class="news-card">
-                    <img src="../../public/news3.png" />
-                    <input type="date" />
-                    <p>
-                        “Вақт-соати келган эди” — Тошкентдаги рейдларга узоқ
-                        тайёргарлик кўрилгани айтилди
-                    </p>
-                </div>
-            </div>y
-           </div>
         </div>
         <Aside />
     </main>
@@ -195,11 +170,11 @@ import Aside from "../layouts/Aside.astro";
         .card__content {
             height: 100%;
             border-bottom: 1px solid rgba(143, 143, 143, 1);
-            input {
+            span {
+                display: inline-block;
                 margin-top: 10px;
-                background-color: transparent;
-                border: none;
-                outline: none;
+                font-size: 12px;
+                color: rgba(143, 143, 143, 1);
             }
             p {
                 margin-top: 10px;
@@ -211,24 +186,23 @@ import Aside from "../layouts/Aside.astro";
             }
         }
     }
-    .main-news{
+    .main-news {
         margin-top: 30px;
         width: 100%;
-        .main__news-title{
+        .main__news-title {
             display: flex;
             justify-content: space-between;
-            h2{
+            h2 {
                 display: flex;
                 align-items: center;
                 gap: 4px;
                 font-weight: 700;
                 font-size: 18px;
             }
-            a{
+            a {
                 font-size: 17px;
                 font-weight: 600;
                 color: #17206a;
-               
             }
         }
     }
