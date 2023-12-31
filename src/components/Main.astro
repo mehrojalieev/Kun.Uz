@@ -1,17 +1,12 @@
 ---
 import Container from "../utils/Container.astro";
 import Aside from "../layouts/Aside.astro";
-import {getCollection} from "astro:content"
+import { getCollection } from "astro:content";
 
-const mainCardNews = await getCollection("mainCardNews")
-const getMainData =  mainCardNews[0].data.MainCardNews;
+const mainCardNews = await getCollection("mainCardNews");
+const getMainData = mainCardNews[0].data.MainCardNews;
 console.log(getMainData);
-
-
-
 ---
-
-
 
 <Container>
     <main class="main">
@@ -34,25 +29,41 @@ console.log(getMainData);
                 </div>
             </div>
             <div class="main__card-container">
-               {
-                getMainData.map(cardNew => 
-                    <div class="main-card">
+                {
+                    getMainData.map((cardNew) => (
+                        <div class="main-card">
                             <div class="card__image">
-                                <img src={cardNew.image} alt="">
-                                </div>
+                                <img src={cardNew.image} alt="" />
+                            </div>
                             <div class="card__content">
-                                <span><i class="bi bi-calendar2-event-fill"></i>  &nbsp;{cardNew.date}</span>
-                                    <p>{cardNew.description}</p>
-                                </div>
-
+                                <span>
+                                    <i class="bi bi-calendar2-event-fill" />{" "}
+                                    &nbsp;{cardNew.date}
+                                </span>
+                                <p>{cardNew.description}</p>
+                            </div>
                         </div>
-                )
-               }
+                    ))
+                }
             </div>
             <div class="main-news">
                 <div class="main__news-title">
                     <h2>
-                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg" ><rect     x="2"     y="2.10999"     width="11"     height="11"     rx="5.5"     stroke="#17206A"     stroke-width="4"></rect></svg >
+                        <svg
+                            width="15"
+                            height="16"
+                            viewBox="0 0 15 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            ><rect
+                                x="2"
+                                y="2.10999"
+                                width="11"
+                                height="11"
+                                rx="5.5"
+                                stroke="#17206A"
+                                stroke-width="4"></rect></svg
+                        >
                          Муҳаррир танлови
                     </h2>
                     <a href="#">Барчаси</a>
