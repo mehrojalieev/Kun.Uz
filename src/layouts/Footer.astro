@@ -1,0 +1,105 @@
+---
+import Container from "../utils/Container.astro";
+---
+
+<footer>
+   <div class="footer__head">
+  <Container>
+    <div class="footer-header">
+        <ul class="header-menu">
+            <li>Сайт ҳақида</li>
+            <li>RSS</li>
+            <li>Алоқа</li>
+            <li>Реклама</li>
+            <li>Кун мавзулари</li>
+            <li>Kun.uz жамоаси</li>
+        </ul>
+        <img width="26" height="26" src="./footer_logo.svg">
+    </div>
+  </Container>
+</div>
+    <Container>
+        
+        <div class="footer-container">
+            <div class="content">
+                <p>
+                    «KUN.UZ» сайтида эълон қилинган материаллардан нусха
+                    кўчириш, тарқатиш ва бошқа шаклларда фойдаланиш фақат
+                    таҳририят ёзма розилиги билан амалга оширилиши мумкин.
+                    Гувоҳнома: №0987. Берилган санаси: 22.06.2015 йил. Муассис:
+                    «WEB EXPERT» МЧЖ. Таҳририят манзили: 100043, Тошкент шаҳри,
+                    К. Ёрматов кўчаси, 12-уй. Электрон манзил: info@kun.uz.
+                    Сайтда эълон қилинаётган муаллифлик мақолаларида келтирилган
+                    фикрлар муаллифга тегишли ва улар Kun.uz таҳририяти нуқтаи
+                    назарини ифода этмаслиги мумкин. Ⓣ - мақола ва материалларда
+                    қўйилган мазкур белги уларнинг тижорат ва реклама ҳуқуқлари
+                    асосида эълон қилинганлигини билдиради.
+                </p>
+
+            </div>
+            <div class="social-action">
+                <img src="./icons.png" alt="">
+            </div>
+        </div>
+    </Container>
+</footer>
+
+
+<style lang="scss">
+    footer{
+        width: 100%;
+        height: auto;
+        background-color: #17206a;
+        margin-top: 110px;
+    }
+    .footer__head{
+        height: 55px;
+        width: 100%;
+        background-color: #1c2680;
+        
+    }
+    .footer-header{
+
+        width: 100%;
+        height: 100%;
+        padding-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-menu{
+        display: flex;
+        align-items: center;
+        gap: 0px 50px;
+        li{
+            list-style: none;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            transition: 0.3s;
+            &:hover{
+                cursor: pointer;
+                opacity: 0.7;
+            }
+            
+        }
+    }
+
+    .footer-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 175px;
+        
+        .content{
+            p{
+                width: 890px;
+                font-size: 13px;
+                color: #8b8fb4;
+                line-height: 18px;
+            }
+        }
+    }
+</style>
