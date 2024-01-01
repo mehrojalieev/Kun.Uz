@@ -1,0 +1,164 @@
+---
+import Container from "../utils/Container.astro";
+import { getCollection } from "astro:content";
+const articleNews = await getCollection("articleNews")
+const getArticle = articleNews[0].data.articleNews
+
+---
+
+
+
+<div class="articles">
+        <Container>
+            <div class="article-header">
+                <div class="title-name">
+                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
+                        </svg>
+                        <strong>Мақолалар</strong>
+                </div>
+                <div class="header-link">
+                    <span>Барчаси</span>
+                            <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+        <div class="article-wrapper">
+            {
+                getArticle.map((articles) => 
+                    <div class="articles-card">
+                            <div class="article-image">
+                                <img src={articles.image}>
+                                </div>
+                            <h3>{articles.title}</h3>
+                            <p>{articles.description}</p>
+                        </div>
+                )
+            }
+        </div>
+        <div class="article-footer">
+                <div class="logo">
+                        <img width="74" height="27" src="./logo.svg" alt="Logo">
+                        <strong>Бизнес</strong>
+                    </div>
+                    <a href="#" class="article-link">
+                            <span>Ҳамкорлик қилиш</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+            </div>
+        </Container>
+    </div>
+
+
+
+<style lang="scss">
+    .articles{
+
+        margin-top: 100px;
+    }
+    .article-header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 5px;
+        .title-name{
+            display: flex;
+            align-items: center;
+            gap: 0px 10px;
+            strong{
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        .header-link{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: rgba(34, 70, 197, 1);
+            span{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            i{
+                padding-top: 4px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+    .article-wrapper{
+        margin-top: 25px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px 15px;
+    }
+    .articles-card{
+        width: 425px;
+        height: 500px;
+        
+        .article-image{
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                transition: 0.5s;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.8;
+                    transform: scale(1.05);
+                }
+            }
+        }
+        h3{
+            height: 63px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 13px;
+        }
+        p{
+            width: 420px;
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+    .article-footer{
+        padding: 0px 5px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            strong{
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+        .article-link{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: rgba(34, 70, 197, 1);
+            span{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            i{
+                padding-top: 4px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+</style>
