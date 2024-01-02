@@ -1,0 +1,115 @@
+---
+import Container from "../utils/Container.astro";
+
+---
+
+<div class="interview">
+    <Container>
+        <div class="interview-header">
+            <div class="title-name">
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
+                    </svg>
+                    <strong>Интервю</strong>
+            </div>
+            <div class="header-link">
+                <span>Интервю</span>
+                        <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+        <div class="interview-wrapper">
+            <div class="inter-card">
+                <img src="./inter1.png">
+                <p>
+                    «Жадидлар орзуси ўтмишда қолган эди, энди келажак масаласига айланди» – эксперт
+                </p>
+            </div>
+            <div class="inter-card">
+                <img src="./inter2.png">
+                <p>
+                    Хитойнинг Яқин Шарқдаги манфаатлари: Пекин нега Фаластинни қўллаяпти?
+                </p>
+            </div>
+            <div class="inter-card">
+                <img src="./inter3.png">
+                <p>
+                    Россия нимани афзал билади: ишончга кириш ёки куч ишлатиш?
+                </p>
+            </div>
+            <div class="inter-card">
+                <img src="./inter4.png">
+                <p>
+                    “Бу тадбиркорлар учун ўлим жазоси” — солиқ маслаҳатчиси 227-1-модда ҳақида
+                </p>
+            </div>
+        </div>
+    </Container>
+</div>
+
+<style lang="scss">
+    .interview{
+        margin-top: 100px;
+        width: 100%;
+        height: 410px;
+        background-color: #f0f0f0;
+        padding-top: 10px;
+    }
+    .interview-header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 5px;
+        .title-name{
+            display: flex;
+            align-items: center;
+            gap: 0px 10px;
+            strong{
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        .header-link{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: rgba(34, 70, 197, 1);
+            span{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            i{
+                padding-top: 4px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+    .interview-wrapper{
+        display: flex;
+        align-items: center;
+         justify-content: space-around;
+        width: 100%;
+        height: 360px;
+    }
+    .inter-card{
+        width: 306px;
+        height: 295px;
+        background-color: #fff;
+        img{
+            width: 100%;
+            height: 180px;
+            box-shadow:  9px 5px 5px 1px  #0D1b8c;
+        }
+        p{
+            width: 250px;
+            color: #000;
+            font-weight: 700;
+            line-height: 23px;
+            font-size: 16px;
+            padding-left: 20px;
+            margin-top: 7px;
+        }
+    }
+</style>
