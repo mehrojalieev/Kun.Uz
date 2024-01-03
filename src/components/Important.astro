@@ -1,0 +1,105 @@
+---
+import Container from "../utils/Container.astro";
+import { getCollection } from "astro:content";
+const importNews = await getCollection("importantNews")
+const getImportNews = importNews[0].data.importantNews
+console.log(getImportNews);
+
+---
+
+<div class="important">
+    <Container>
+        <div class="important__news-title">
+            <div class="title-name">
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
+                    </svg>
+                    <strong>Долзарб хабарлар</strong>
+            </div>
+        </div>
+        <div class="important-wrapper">
+            <div class="main-section">
+                <img src="./ship.png" width="635"  />
+                <h2>
+                    Қора денгиздаги уруш: Украина Россия флотига қарши қандай
+                    курашмоқда ва буёғига нима бўлади?
+                </h2>
+                <p>
+                    РФ Қора денгиз флоти қўмондонлиги Украина билан кенг кўламли
+                    урушга десант бўлинмалари тушириш, Одесса портига рейдлар
+                    уюштириш, соҳил бўйлаб амалиётлар ўтказиш ва юриш қилаётган
+                    қўшинлар қаноти ҳимоясини таъминлашни режалаштирган ҳолда
+                    кирганди.
+                </p>
+            </div>
+            <div class="layout-section">
+                {
+                    getImportNews.map(importantData => 
+                        <div class="layout-card">
+                                <img src={importantData.image} width="320" height="200">
+                                <h3>{importantData.description}</h3>
+                            </div>
+                    )
+                }
+            </div>
+        </div>
+    </Container>
+</div>
+
+<style lang="scss">
+    .important {
+        margin-top: 80px;
+    }
+    .important__news-title{
+        width: 100%;
+        .title-name{
+            display: flex;
+            align-items: center;
+            gap: 0px 15px;
+            strong{
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+    }
+    .important-wrapper{
+        display: flex;
+        gap: 0px 20px;
+        margin-top: 20px;
+    }
+    .main-section {
+        width: 675px;
+
+        h2 {
+            width: 610px;
+            font-size: 20px;
+            line-height: 27px;
+            color: #000;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        p {
+            width: 600px;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 26px;
+            color: #000;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+    }
+    .layout-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px 20px;
+    }
+    .layout-card{
+        h3{
+            width: 300px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+    }
+</style>
