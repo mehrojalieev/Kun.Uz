@@ -6,9 +6,9 @@ const getWarningNews = warningNews[0].data.warningNews
 
 ---
 
-<div class="important">
+<div class="warning-content">
     <Container>
-        <div class="important__news-title">
+        <div class="warning__news-title">
             <div class="title-name">
                 <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
@@ -16,7 +16,7 @@ const getWarningNews = warningNews[0].data.warningNews
                     <strong>Долзарб хабарлар</strong>
             </div>
         </div>
-        <div class="important-wrapper">
+        <div class="warning__content-wrapper">
             <div class="main-section">
                 <img src="./tank.png" width="635"  />  
                 <p>   Исроил Ғазо секторидаги қуруқлик амалиётини кенгайтирмоқда</p>
@@ -36,10 +36,10 @@ const getWarningNews = warningNews[0].data.warningNews
 </div>
 
 <style lang="scss">
-    .important {
+    .warning-content {
         margin-top: 80px;
     }
-    .important__news-title{
+    .warning__news-title{
         width: 100%;
         .title-name{
             display: flex;
@@ -51,7 +51,7 @@ const getWarningNews = warningNews[0].data.warningNews
             }
         }
     }
-    .important-wrapper{
+    .warning__content-wrapper{
         display: flex;
         gap: 0px 60px;
         margin-top: 20px;
