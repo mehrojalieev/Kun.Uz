@@ -3,7 +3,6 @@ import Container from "../utils/Container.astro";
 import { getCollection } from "astro:content";
 const importNews = await getCollection("importantNews")
 const getImportNews = importNews[0].data.importantNews
-console.log(getImportNews);
 
 ---
 
