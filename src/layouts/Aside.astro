@@ -1,33 +1,84 @@
 ---
-// import { getCollection } from "astro:content";
-
-// const asideNews = await getCollection("asideNews")
-//   // const getAsideNews = asideNews
-//   console.log(asideNews);
-  
+import { getCollection } from "astro:content";
+const asideNews = await getCollection("asideNews");
+const getAsideNews = asideNews[0].data.asideNews;
+console.log(getAsideNews);
 ---
 
 <aside class="aside">
   <h1>
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2.5" y="2.82999" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
-      </svg>
-      Сўнгги янгиликлар
+    <svg   width="16"   height="16"   viewBox="0 0 16 16"   fill="none"   xmlns="http://www.w3.org/2000/svg" >
+      <rect  x="2.5"  y="2.82999"  width="11"  height="11"  rx="5.5"  stroke="#17206A"  stroke-width="4"></rect>
+    </svg>
+     Сўнгги янгиликлар
   </h1>
   <div class="aside__card-container">
-    <div class="aside-card">
-      
-    </div>
+    {
+      getAsideNews.map((data) => (
+        <div class="aside-card">
+          <span>
+            <i class="bi bi-calendar2-event-fill" />
+            &nbsp;{data.date}
+          </span>
+          <p>{data.description}</p>
+        </div>
+        ))
+      }
+      <a href="#" class="news-link">
+        <span>Кўпроқ янгилик</span>
+        <i class="bi bi-arrow-right"></i>
+        </a>
+    
   </div>
 </aside>
 
-
-
-
 <style lang="scss">
-      aside {
-        width: 330px;
-        height: 100%;
-        background-color: #eee;
-    }
+  aside {
+    width: 330px;
+    height: 100%;
+  }
+  .aside-card{
+    width: 300px;
+    height: 107px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+    span {
+                display: inline-block;
+                margin-top: 10px;
+                font-size: 12px;
+                color: rgba(143, 143, 143, 1);
+            }
+            p{
+              width: 290px;
+              color: #000;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 21px;
+              margin-top: 10px;
+            }
+  }
+  .news-link{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    width: 300px !important;
+    height: 60px;
+    border-left: 3px solid #2246c5;
+    background-color: #f0f0f0;
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+   text-decoration: none !important;
+   span{
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+   }
+   i{
+    color: #000;
+    font-size: 24px;
+   }
+  }
 </style>
