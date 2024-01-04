@@ -1,24 +1,36 @@
 ---
 import Container from "../utils/Container.astro";
 import { getCollection } from "astro:content";
-const importNews = await getCollection("importantNews")
-const getImportNews = importNews[0].data.importantNews
-
+const importNews = await getCollection("importantNews");
+const getImportNews = importNews[0].data.importantNews;
 ---
 
 <div class="important">
     <Container>
         <div class="important__news-title">
             <div class="title-name">
-                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
-                    </svg>
-                    <strong>Долзарб хабарлар</strong>
+                <svg
+                    width="15"
+                    height="16"
+                    viewBox="0 0 15 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="2"
+                        y="2.7002"
+                        width="11"
+                        height="11"
+                        rx="5.5"
+                        stroke="#17206A"
+                        stroke-width="4"></rect>
+                </svg>
+                <strong>Долзарб хабарлар</strong>
             </div>
         </div>
         <div class="important-wrapper">
             <div class="main-section">
-                <img src="./ship.png" width="635"  />
+                <img src="./ship.png" width="635" />
                 <h2>
                     Қора денгиздаги уруш: Украина Россия флотига қарши қандай
                     курашмоқда ва буёғига нима бўлади?
@@ -33,12 +45,16 @@ const getImportNews = importNews[0].data.importantNews
             </div>
             <div class="layout-section">
                 {
-                    getImportNews.map(importantData => 
+                    getImportNews.map((importantData) => (
                         <div class="layout-card">
-                                <img src={importantData.image} width="320" height="200">
-                                <h3>{importantData.description}</h3>
-                            </div>
-                    )
+                            <img
+                                src={importantData.image}
+                                width="320"
+                                height="200"
+                            />
+                            <h3>{importantData.description}</h3>
+                        </div>
+                    ))
                 }
             </div>
         </div>
@@ -49,19 +65,19 @@ const getImportNews = importNews[0].data.importantNews
     .important {
         margin-top: 80px;
     }
-    .important__news-title{
+    .important__news-title {
         width: 100%;
-        .title-name{
+        .title-name {
             display: flex;
             align-items: center;
             gap: 0px 15px;
-            strong{
+            strong {
                 font-size: 20px;
                 font-weight: 700;
             }
         }
     }
-    .important-wrapper{
+    .important-wrapper {
         display: flex;
         gap: 0px 20px;
         margin-top: 20px;
@@ -87,14 +103,14 @@ const getImportNews = importNews[0].data.importantNews
             margin-top: 15px;
         }
     }
-    .layout-section{
+    .layout-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 15px 20px;
     }
-    .layout-card{
-        h3{
+    .layout-card {
+        h3 {
             width: 300px;
             font-size: 14px;
             font-weight: 700;
