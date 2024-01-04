@@ -1,34 +1,52 @@
 ---
 import Container from "../utils/Container.astro";
 import { getCollection } from "astro:content";
-const warningNews = await getCollection("warningNews")
-const getWarningNews = warningNews[0].data.warningNews
-
+const warningNews = await getCollection("warningNews");
+const getWarningNews = warningNews[0].data.warningNews;
 ---
 
 <div class="warning-content">
     <Container>
         <div class="warning__news-title">
             <div class="title-name">
-                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2.7002" width="11" height="11" rx="5.5" stroke="#17206A" stroke-width="4"/>
-                    </svg>
-                    <strong>Долзарб хабарлар</strong>
+                <svg
+                    width="17"
+                    height="18"
+                    viewBox="0 0 15 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="2"
+                        y="2.7002"
+                        width="11"
+                        height="11"
+                        rx="5.5"
+                        stroke="#17206A"
+                        stroke-width="4"></rect>
+                </svg>
+                <strong>Долзарб хабарлар</strong>
             </div>
         </div>
         <div class="warning__content-wrapper">
             <div class="main-section">
-                <img src="./tank.png" width="635"  />  
-                <p>   Исроил Ғазо секторидаги қуруқлик амалиётини кенгайтирмоқда</p>
+                <img src="./tank.png" width="635" />
+                <p>
+                    Исроил Ғазо секторидаги қуруқлик амалиётини кенгайтирмоқда
+                </p>
             </div>
             <div class="layout-section">
                 {
-                    getWarningNews.map(warningData => 
+                    getWarningNews.map((warningData) => (
                         <div class="warning-card">
-                                <img src={warningData.image} width="320" height="200">
-                                <p>{warningData.description}</p>
-                            </div>
-                    )
+                            <img
+                                src={warningData.image}
+                                width="320"
+                                height="200"
+                            />
+                            <p>{warningData.description}</p>
+                        </div>
+                    ))
                 }
             </div>
         </div>
@@ -39,19 +57,19 @@ const getWarningNews = warningNews[0].data.warningNews
     .warning-content {
         margin-top: 80px;
     }
-    .warning__news-title{
+    .warning__news-title {
         width: 100%;
-        .title-name{
+        .title-name {
             display: flex;
             align-items: center;
             gap: 0px 15px;
-            strong{
+            strong {
                 font-size: 20px;
                 font-weight: 700;
             }
         }
     }
-    .warning__content-wrapper{
+    .warning__content-wrapper {
         display: flex;
         gap: 0px 60px;
         margin-top: 20px;
@@ -69,22 +87,22 @@ const getWarningNews = warningNews[0].data.warningNews
             margin-top: 15px;
         }
     }
-    .layout-section{
+    .layout-section {
         width: 100%;
         display: flex;
         flex-direction: column;
-        
+
         gap: 15px 0px;
     }
-    .warning-card{
+    .warning-card {
         display: flex;
         gap: 20px;
         height: 110px;
-        img{
+        img {
             width: 170px;
             height: 110px;
         }
-        p{
+        p {
             width: 370px;
             font-size: 15px;
             font-weight: 700;
